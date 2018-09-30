@@ -40,7 +40,7 @@ export const SlyderWrapper = styled.div`
 `;
 
 export const StyledLinearProgress = styled(LinearProgress)`
-  height: 20px;
+  height: 15px;
   width: 184px;
   border-radius: 5px;
   margin-top: 16px;

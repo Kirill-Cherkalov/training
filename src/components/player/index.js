@@ -64,7 +64,7 @@ class Player extends Component {
 
   stop = () => {
     this.setState({
-      url: musicUrls, playing: false, loaded: 0, played: 0, seeking: false,
+      currentTrack: 0, playing: false, loaded: 0, played: 0, seeking: false,
     });
     this.player.seekTo(parseFloat(0));
   }
