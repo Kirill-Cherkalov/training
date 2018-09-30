@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import Toolbar from '@material-ui/core/Toolbar';
 
-const TextContainer = styled.div`
+export const TextContainer = styled.div`
   font-size: 28px;
   line-height: 36px;
   height: 100%;
@@ -10,4 +11,9 @@ const TextContainer = styled.div`
   justify-content: center;
 `;
 
-export default TextContainer;
+export const StyledToolbar = styled(Toolbar)`
+  && {
+    display: flex;
+    justify-content: space-between;
+  }
+`;

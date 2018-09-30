@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 
+
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
@@ -16,8 +16,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import mailFolderListItems from './Data';
 
+import Player from '../player';
 import neckTraining from '../../modules/neckTraining';
-import TextContainer from './styled';
+import EyesTraining from '../../modules/eyesTraining';
+import * as S from './styled';
 
 const drawerWidth = 290;
 
@@ -144,7 +146,7 @@ class PersistentDrawer extends React.Component {
     );
 
     const before = drawer;
-
+    console.log('asd');
     return (
       <Router>
         <div className={classes.root}>
@@ -155,7 +157,7 @@ class PersistentDrawer extends React.Component {
                 [classes[`appBarShift-${anchor}`]]: open,
               })}
             >
-              <Toolbar disableGutters={!open}>
+              <S.StyledToolbar disableGutters={!open}>
                 <IconButton
                   color="inherit"
                   aria-label="Open drawer"
@@ -167,7 +169,8 @@ class PersistentDrawer extends React.Component {
                 <Typography variant="title" color="inherit" noWrap>
                   Training
                 </Typography>
-              </Toolbar>
+                <Player />
+              </S.StyledToolbar>
             </AppBar>
             {before}
             <main
@@ -178,9 +181,10 @@ class PersistentDrawer extends React.Component {
             >
               <div className={classes.drawerHeader} />
               <Switch>
-                <Route exact path="/" render={() => <TextContainer>The application for exercise of the neck and eyes</TextContainer>} />
+                <Route exact path="/" render={() => <S.TextContainer>The application for exercise of the neck and eyes</S.TextContainer>} />
                 <Route path="/neckTraining/:1" component={neckTraining} />
                 <Route path="/neckTraining/:2" component={neckTraining} />
+                <Route path="/eyesTraining/:1" component={EyesTraining} />
               </Switch>
             </main>
           </div>

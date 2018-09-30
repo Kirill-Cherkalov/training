@@ -10,7 +10,7 @@ import { NeckIcon, EyeIcon } from './styled';
 
 const mailFolderListItems = (
   <div>
-    <Link href="/neckTraining/:1" some="12" to="/neckTraining/:1">
+    <Link href="/neckTraining/:1" to="/neckTraining/:1">
       <ListItem button>
         <ListItemIcon>
           <NeckIcon />
@@ -27,18 +27,22 @@ const mailFolderListItems = (
       </ListItem>
     </Link>
     <Divider />
-    <ListItem button>
-      <ListItemIcon>
-        <EyeIcon />
-      </ListItemIcon>
-      <ListItemText primary="Exercise for eyes №1" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <EyeIcon />
-      </ListItemIcon>
-      <ListItemText primary="Exercise for eyes №2" />
-    </ListItem>
+    <Link href="/eyesTraining/:1" to="/eyesTraining/:1">
+      <ListItem button>
+        <ListItemIcon>
+          <EyeIcon />
+        </ListItemIcon>
+        <ListItemText primary="Exercise for eyes №1" />
+      </ListItem>
+    </Link>
+    <Link href="/eyesTraining/:2" to="/eyesTraining/:2">
+      <ListItem button>
+        <ListItemIcon>
+          <EyeIcon />
+        </ListItemIcon>
+        <ListItemText primary="Exercise for eyes №2" />
+      </ListItem>
+    </Link>
   </div>
 );
 
