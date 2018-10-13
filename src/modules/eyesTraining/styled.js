@@ -1,18 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Paper from '@material-ui/core/Paper';
 
-import upDown from './img/upDown.gif';
-import leftRight from './img/leftRight.gif';
-
-const getGif = (numb) => {
-  if (numb === 1) {
-    return upDown;
-  } else if (numb === 2) {
-    return leftRight;
-  }
-  return null;
-};
+import circle from './img/circle.png';
+import sphere from './img/sphere.png';
 
 export const ContentBtn = styled.div`
   display: flex;
@@ -33,33 +25,56 @@ export const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
+export const CirckeWrapper = styled.div`
+  display: flex;
+  width: 480px;
+  height: 270px;
+  position: relative;
+`;
+
+export const Timer = styled.p`
+  font-size: 22px;
+  line-height: 24px;
+`;
+
 export const StyledPaper = styled(({ ...rest }) => (
   <Paper {...rest} />
 ))`
   && {
-    width: ${({ width }) => (width ? width : '400px')};
+    width: ${({ width }) => (width || '400px')};
     text-align: justify;
     font-size: 22px;
     line-height: 26px;
     padding: 25px;
     color: ${({ theme }) => theme.mono.dark};
-    margin-right: ${({ marginRight }) => ( marginRight ? marginRight : '150px')};
+    margin-bottom: 20px;
   }
 `;
 
 export const ImgWrapper = styled.div`
   position: relative;
-  width: 480px;
+  width: 500px;
   height: 270px;
   display: block;
+  background-image: url(${circle});
+  background-size: cover;
+`;
+
+export const ImgContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  
 `;
 
 export const Img = styled.div`
   display: block;
-  border-radius: 15px;
-  height: 100%;
-  width: 100%;
-  background-image: url(${({ numb }) => getGif(numb)});
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  position: absolute;
+  z-index: 2;
+  top: ${({ top }) => top}px;
+  left: ${({ left }) => left}px;
+  height: 100px;
+  width: 109px;
+  background-image: url(${sphere});
   background-repeat: no-repeat;
+  background-size: cover;
 `;

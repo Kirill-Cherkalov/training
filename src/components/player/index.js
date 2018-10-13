@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 
 import IconButton from '@material-ui/core/IconButton';
-import PlayArrow from '@material-ui/icons/PlayArrow';
-import Pause from '@material-ui/icons/Pause';
-import Stop from '@material-ui/icons/Stop';
-import SkipNext from '@material-ui/icons/SkipNext';
-import SkipPrevious from '@material-ui/icons/SkipPrevious';
 
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/lab/Slider';
@@ -126,18 +121,18 @@ class Player extends Component {
           <IconButton
             onClick={this.prevTrack}
           >
-            <SkipPrevious />
+            <S.StyledPrev />
           </IconButton>
           <IconButton onClick={this.stop}>
-            <Stop />
+            <S.StyledStop />
           </IconButton>
           <IconButton onClick={this.playPause}>
-            {playing ? <Pause /> : <PlayArrow />}
+            {playing ? <S.StyledPause /> : <S.StyledPlay />}
           </IconButton>
           <IconButton
             onClick={this.nextTrack}
           >
-            <SkipNext />
+            <S.StyledNext />
           </IconButton>
           <S.SlyderWrapper top={showPlayer ? '0' : '-500px'}>
             <S.Slider>
