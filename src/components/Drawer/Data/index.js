@@ -35,14 +35,6 @@ const mailFolderListItems = (
         <ListItemText primary="Exercise for eyes №1" />
       </ListItem>
     </Link>
-    <Link href="/eyesTraining/:2" to="/eyesTraining/:2">
-      <ListItem button>
-        <ListItemIcon>
-          <EyeIcon />
-        </ListItemIcon>
-        <ListItemText primary="Exercise for eyes №2" />
-      </ListItem>
-    </Link>
   </div>
 );
 
