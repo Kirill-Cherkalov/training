@@ -41,7 +41,8 @@ class EyesTraining extends Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     if ((nextState.excercise === 1 && this.state.excercise === 0)
-    || (nextState.excercise === 2 && this.state.excercise === 1)) {
+    || (nextState.excercise === 2 && this.state.excercise === 1)
+      || (nextState.excercise === 3 && this.state.excercise === 2)) {
       this.setState({ timer: this.state.timerMax });
       return true;
     }
@@ -74,11 +75,8 @@ class EyesTraining extends Component {
     if (timer === 0) {
       return this.setState(prevState => ({ excercise: prevState.excercise + 1 }));
     }
-    if (excercise === 3) {
-      return this.setState({ timer: this.state.timerMax });
-    }
     if (excercise > 0 && excercise !== 3) {
-      return this.setState(prevState => ({ timer: prevState.timer - 1 }));
+      this.setState(prevState => ({ timer: prevState.timer - 1 }));
     }
     return undefined;
   }
@@ -177,11 +175,6 @@ class EyesTraining extends Component {
             <S.ImgContainer>
               <S.ImgWrapper>
                 <S.Img top={top} left={210} numb={excercise} />
-                {/* <Svg modif={'left'}> </Svg>
-          <S.Img top={top} modif={'left'} left={210} numb={excercise} />
-          <Svg modif={'right'}> </Svg>
-          <S.Img top={top}  modif={'right'}left={210} numb={excercise} />
-               */}
               </S.ImgWrapper>
               <S.ImgWrapper>
                 <S.Img top={top} left={210} numb={excercise} />

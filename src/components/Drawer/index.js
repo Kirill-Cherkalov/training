@@ -146,7 +146,6 @@ class PersistentDrawer extends React.Component {
     );
 
     const before = drawer;
-    console.log('asd');
     return (
       <Router>
         <div className={classes.root}>
