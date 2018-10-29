@@ -7,7 +7,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -143,19 +143,19 @@ class EyesTraining extends Component {
               <FormControlLabel
                 value="low"
                 control={<Radio color="primary" />}
-                label="Low"
+                label="Простой"
                 labelPlacement="start"
               />
               <FormControlLabel
                 value="medium"
                 control={<Radio color="primary" />}
-                label="Medium"
+                label="Средний"
                 labelPlacement="start"
               />
               <FormControlLabel
                 value="hard"
                 control={<Radio color="primary" />}
-                label="Hard"
+                label="Сложный"
                 labelPlacement="start"
               />
             </RadioGroup>
@@ -231,13 +231,13 @@ class EyesTraining extends Component {
     return (
       <S.ContentBtn>
         <S.Timer>
-          {this.state.timer} seconds
+          {this.state.timer} секунд
         </S.Timer>
         <S.Wrapper>
           {this.someFunct()}
-          <Button variant="fab" color="primary" onClick={this.handleClick}>
+          <S.StyledBtn variant="fab" color="primary" onClick={this.handleClick}>
             <ArrowForwardIos className={classes.button} />
-          </Button>
+          </S.StyledBtn>
         </S.Wrapper>
       </S.ContentBtn>
     );
