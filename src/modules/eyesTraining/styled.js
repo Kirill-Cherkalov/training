@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 
 import Paper from '@material-ui/core/Paper';
 
 import circle from './img/circle.png';
 import sphere from './img/sphere.png';
+
+export const StyledBtn = styled(Button)`
+  && {
+    margin-left: 25px;
+  }
+`;
 
 export const ContentBtn = styled.div`
   display: flex;
